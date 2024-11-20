@@ -11,7 +11,7 @@ trait ConfigTrait
 
     protected function addConfig()
     {
-        $default = realpath(__DIR__ . '/../config.php');
+        $default = realpath(__DIR__ . '/../config/config.php');
 
         $this->addOption('config', 'c', InputOption::VALUE_REQUIRED, 'config file', $default);
     }

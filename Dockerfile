@@ -34,8 +34,6 @@ RUN wget -O vorwahlen.zip "https://www.bundesnetzagentur.de/SharedDocs/Downloads
     mv *.ONB.csv assets/ONB.csv && \
     rm vorwahlen.zip
 
-COPY config.example.php config.php
-
 FROM base AS final
 ENV DOCKER_CONTAINER=true
 
