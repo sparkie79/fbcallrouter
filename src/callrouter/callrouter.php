@@ -474,12 +474,13 @@ class callrouter
             } elseif ($this->isNumberKnown($number) === false) {
                 $this->setContactEntry($this->blackList, $number);
                 $this->mailText[] = $this->setLogging(2, [$number, $this->callMonitorValues['intern']]);
-                $isForeign = (substr($number, 0, 2) === '00') ? true : false;
+                /*$isForeign = (substr($number, 0, 2) === '00') ? true : false;
                 if ($isForeign) {                   // foreign number specific
                     $isSortedOut = $this->parseForeignNumber($number, $numberLength);
                 } else {                            // domestic numbers specific
                     $isSortedOut =  $this->parseDomesticNumber($number, $numberLength);
-                }
+                }*/
+                $isSortedOut = false;
             }
             if (!$isSortedOut) {
                 $this->webSearch($number, $isForeign);
