@@ -483,7 +483,7 @@ class callrouter
                 $isSortedOut = false;
             }
             if (!$isSortedOut) {
-                $this->webSearch($number, $isForeign);
+                $this->webSearch($number, false);
             }
         }
     }
