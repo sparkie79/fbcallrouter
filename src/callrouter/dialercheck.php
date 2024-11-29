@@ -43,8 +43,8 @@ class dialercheck
         'WerHatAngerufen',
     ];
     const TELLOWS = [
-        'http://www.tellows.de/basic/num/%s?xml=1&partner=test&apikey=test123',
-        'https://www.tellows.de/num/',
+        'http://www.tellows.it/basic/num/%s?xml=1&apikeyMd5=399a147c51f6942600fa41412f2678d13',
+        'https://www.tellows.it/num/',
         'tellows',
     ];
     const DSOERTL = [
@@ -295,7 +295,7 @@ class dialercheck
     public function getRating(string $number)
     {
         $proofedRating['score'] = null;
-        if ($rating = $this->getWerRuftInfoRating($number)) {
+        /*if ($rating = $this->getWerRuftInfoRating($number)) {
             if ($this->proofRating($rating)) {
                 return $rating;
             } else {
@@ -322,7 +322,7 @@ class dialercheck
             } else {
                 ($rating['score'] <= $proofedRating['score']) ?: $proofedRating = $rating;
             }
-        }
+        }*/
         if ($rating = $this->getTellowsRating($number)) {
             if ($this->proofRating($rating)) {
                 return $rating;
